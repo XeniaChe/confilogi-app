@@ -19,7 +19,6 @@ function App() {
       <BookmarkManager />
       <FeaturesSection />
       <BookmarkSection />
-      <colorShape />
       <DownloadSection />
       <QuestionsSection />
       <FooterConnect />
