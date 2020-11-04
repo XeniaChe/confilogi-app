@@ -1,0 +1,37 @@
+.Button {
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    padding: 1rem 2rem;
+    font-family: inherit;
+    
+    color: var(--base_color_white);
+    border-radius: .5rem;
+    transition: all .3s;
+    border: 2px solid transparent;
+    box-shadow:  0px  10px 15px rgba(black, .2) ;
+    &:hover {
+        background-color: var(--base_color_white);
+        
+       
+    }
+
+    
+}
+
+.Red{
+    background-color: var(--base_color_red);
+    &:hover{
+        border: 2px solid var(--base_color_red);
+        color:var(--base_color_red);
+    }
+}
+
+.Blue{
+    background-color: var(--base_color_blue);
+    margin-right: 1rem;
+    &:hover{
+        border: 2px solid var(--base_color_blue);
+        color:var(--base_color_blue);
+    }
+}

@@ -1,0 +1,19 @@
+@mixin respond($breakpoint) {
+    @if $breakpoint == phone-375  {             //375px  375/16=23.44
+        @media (max-width: 23.44em) { @content }   
+    };
+ 
+    @if $breakpoint == desktop-1440 {                 //1440px  1440/16=90 
+        @media (min-width: 90em) { @content }
+    };
+    @if $breakpoint == big-desktop {                 //1800px  
+        @media (min-width: 112.5em) { @content }
+    };
+    
+    /*
+    @include respond(tabl-port-800){
+        grid-template-rows: 6rem calc(100vh - 6rem) ;
+     }
+     */
+    
+}

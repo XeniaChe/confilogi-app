@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+/* eslint-disable react/no-unescaped-entities */
+import './App.module.scss';
+import * as classes from './App.module.scss';
+import { Header, BookmarkManager } from './components/1-header/Header';
+import {
+  FeaturesSection,
+  BookmarkSection,
+} from './components/2-features/Features';
+import {
+  DownloadSection,
+  QuestionsSection,
+} from './components/3-main-section/MainSection';
+import { FooterConnect, FooterInfo } from './components/4-footer/Footer';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={classes.container}>
+      <Header />
+      <BookmarkManager />
+      <FeaturesSection />
+      <BookmarkSection />
+      <colorShape />
+      <DownloadSection />
+      <QuestionsSection />
+      <FooterConnect />
+      <FooterInfo />
     </div>
   );
 }

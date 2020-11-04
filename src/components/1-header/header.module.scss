@@ -1,0 +1,58 @@
+.Header {
+    grid-column: center-start/center-end;
+    display: grid;
+    grid-template-columns: minmax(61rem , max-content) 39rem 10rem;
+    align-items: center;
+
+    .Bookmark{
+        margin-left: 5rem;
+        text-transform: uppercase;
+        display: flex;
+    }
+    .Navigation{
+        ul{
+            display: flex;
+            justify-content: space-evenly;
+            list-style: none;
+        }
+        .NavItem{
+
+        }
+    }
+}
+
+.BookmarkManager {
+    grid-column: center-start/center-end;
+    display: grid;
+    grid-template-columns: repeat(2, 55.5rem);
+    align-items: center;
+    .TextSection{
+        display: flex;
+        flex-direction: column;
+        margin-right: 3rem;
+        p{
+            margin-top: 3rem;
+        }
+        .ButtonBox{
+            display: flex;
+            margin-top: 3rem;
+        }
+    }
+    
+    .ImageSection{
+        img{
+            margin-left: 10rem;
+            z-index: 100;
+            border: 2rem solid rgba(black,  .8);
+            border-radius: 3rem;
+        }
+    }
+
+    .ColorShapeSection{
+        background-color: var(--base_color_blue);
+        grid-column: col-start 9/ full-end;
+    }
+    
+}
+
+

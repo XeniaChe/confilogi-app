@@ -1,0 +1,28 @@
+  
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+}
+:root {
+	--font_family_1: 'Rubik', sans-serif;
+	--base_color_blue: hsl(231, 69%, 60%);
+	--base_color_white: whitesmoke;
+	--base_color_red: hsl(0, 94%, 66%);
+	--neutral_color_gray: hsl(229, 8%, 60%);
+	--neutral_color_dark-blue: hsl(229, 31%, 21%);
+}
+
+html {
+	box-sizing: border-box;
+	font-size: 62.5%;
+}
+
+body {
+	font-family: var(--font_family_1);
+	// font-weight: 400;
+    font-size: 1.8rem;
+    background-color: var(--base_color_white);
+}
