@@ -1,70 +1,63 @@
-# Getting Started with Create React App
+## Witaj! 👋
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Dziękujemy za zgłoszenie chęci pracowania w naszym zespole. Odbyliśmy już rozmowę i w celu weryfikacji umiejętności technicznych, przesyłamy design strony dostępny w plikach graficznych. Wszystkie potrzebne assety również zostały załączone.
 
-## Available Scripts
+## O samym zadaniu
 
-In the project directory, you can run:
+Twoim zadaniem jest zbudowanie strony produktowej i spróbować odzwierciedlić jej wygląd bliski oryginałowi.
 
-### `npm start`
+Możesz korzystać z dowolnych narzędzi, które pomogą Ci w ukończeniu tego zadania.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Użytkownik powinien móc na stronie:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Widzieć optymalny zarys strony w zależności od urządzenia,
+- Zachować 'aktywne' stany interaktywnych elementów na stronie,
+- Powinien otrzymać wiadomość z błędem w newsletterze, jeśli:
+  - Input jest pusty,
+  - Adres email nie jest poprawnie zapisany (powinien posiadać `@`)
 
-### `npm test`
+Aby ukończyć to zadanie, powinnaś/powinieneś:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Stworzyć zaokrąglony kształt niebieskiego tła przy pomocy kodu,
+- Zmienić `fill` i `stroke` koloru grafik wektorowych w konkretnych punktach,
 
-### `npm run build`
+## Extra funkcjonalności (must-have)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Również chcielibyśmy, aby na stronie pojawiał się modal (pop-up), na którym będzie również zaimplementowane okno z zawartością jednej z zakładek (`tab-2-design.jpg` lub `tab-3-design.jpg`). Ma się ono otwierać:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Po najechaniu kursorem górnej części strony,
+- po 30 sekundach wejścia na stronę,
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Dodatkowo, w stopce strony znajduje się również liczba '35,000+ already joined'. Chcielibyśmy, aby ta liczba spadała do 0 w ciągu 20 sekund od wejścia na stronę.
 
-### `npm run eject`
+## Gdzie znaleźć pliki?
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Twoim zadaniem jest stworzenie projektu w odniesieniu do zarysu strony, który można znaleźć w folderze `/design`. Znajdziesz tam zarówno wersję mobilną, jak i wersję desktopową.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Projekty stron są w formacie `jpg`. Twoim zadaniem jest odzwierciedlenie wszystkich wielkości fontów (`font-size`), `padding` i `margin` względem tego, co zobaczysz na obrazkach - zaufaj swoim przeczuciom 😉!
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Wszystkie potrzebne assety znajdziesz w folderze `/images`. Wszystkie pliki są już odpowiednio skompresowane i zoptymalizowane.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Znajdziesz również plik `style-guide.md`, który zawiera wszystkie informacje, jakie potrzebujesz - w tym kolory i fonty.
 
-## Learn More
+## Budowanie projektu
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Śmiało korzystaj z takich narzędzi, jakich potrzebujesz aby odwzorować projekt. Dużym plusem byłoby, gdyby zostały wykorzystane:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Webpack,
+- Babel,
+- Sass,
+- React
 
-### Code Splitting
+## Oddanie projektu
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Ostateczny termin ukończenia i przesłania projektu jest taki, jaki został przedstawiony podczas rozmowy u nas w biurze. Forma oddania projektu:
 
-### Analyzing the Bundle Size
+- Repozytorium na githubie,
+- Spakowana paczka i przesłana na adres zwrotny, z którego zostało wysłane zadanie rekrutacyjne.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Feedback
 
-### Making a Progressive Web App
+Po ukończeniu zadania, otrzymasz również informację zwrotną od nas w związku z przesłanym przez Ciebie rozwiązaniem.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Miłej zabawy przy kodowaniu!** 🚀
