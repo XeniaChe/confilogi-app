@@ -3,8 +3,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import * as classes from './header.module.scss';
-import bookMarkLogo from '../../images/icon-arrow.svg';
-// import ManagerImage from '../../images/illustration-features-tab-1.svg';
+import bookMarkLogo from '../../images/logo-bookmark.svg';
 import ManagerImage from '../../images/illustration-features-tab-1.svg';
 import Button from '../UI/Button';
 
@@ -17,7 +16,6 @@ const Header = () => {
     <div className={classes.Header}>
       <div className={classes.Bookmark}>
         <img src={bookMarkLogo} />
-        <p>bookmark</p>
       </div>
       <nav className={classes.Navigation}>
         <ul>
@@ -58,7 +56,4 @@ const BookmarkManager = () => {
   );
 };
 
-// const colorShape = () => {
-//   return <div className={classes.ColorShapeSection}> COLOR SHAPE </div>;
-// };
 export { Header, BookmarkManager };

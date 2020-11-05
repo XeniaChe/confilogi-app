@@ -1,9 +1,117 @@
 .DownloadSection{
-    background-color: lawngreen;
     grid-column: col-start 2/col-end 11;
+
+    display: grid;
+    justify-items: center;
+
+    margin-top: 10rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    margin-bottom: 10rem;
+
+    h1{
+        text-transform: capitalize;
+        margin-top: 3rem;
+    }
+
+    p{
+        margin-left: 10rem;
+        margin-right: 10rem;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+        text-align: center;
+    }
+
+    .BrowserCardsBox{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-column-gap: 4rem;
+    }
+
+    .BrowserCard{
+        width: 30rem;
+        height: 40rem;
+        background-color: white;
+        box-shadow:  0px  10px 15px rgba(black, .2);
+        border-radius: 1rem;
+
+       display: grid;
+       justify-items: center;
+       align-items: center;
+
+       .browserLogo{
+           width: 10rem;
+           height: 10rem;
+
+           margin-top: 3rem;
+       }
+
+       .Button_fix{
+           align-self: end;
+       }
+
+       p{
+            margin: -3rem 0 0 0 ;
+            padding: 1.5rem 3.5rem;
+            color: var(--neutral_color_gray)
+       }
+    }
+
+   
 }
 
 .QuestionsSection {
-    background-color: lightblue;
     grid-column: col-start 4/col-end 9;
+
+    display: grid;
+    margin-bottom: 10rem;
+
+    h1{
+        text-transform: capitalize;
+        padding: 0 5rem 0 5rem;
+        text-align: center;
+        margin-bottom: 5rem;
+    }
+
+    .mainText{
+        margin-bottom: 5rem;
+        padding: 0 2rem 0 2rem;
+        text-align: center;
+        color: var(--neutral_color_gray)
+    }
+
+    .QuestionsBox{
+        margin-bottom: 5rem;
+    }
+
+    .QuestionTab{
+        display: grid;
+        grid-template-columns:[first] 50rem [second] 1fr [third];
+
+        padding: 1.5rem 1rem;
+        align-items: center;
+        border-bottom: 1px solid var(--neutral_color_gray);
+
+        p{
+            margin-left: 1rem;
+            margin-right: 5rem;
+            justify-self: start;
+        }
+
+        img{
+            justify-self: center;
+        }
+       
+        .AnswerBox{
+            grid-column: first / third;
+            
+            margin-top: 3rem;
+            margin-bottom: 3rem;
+            color: var(--neutral_color_gray);
+
+            p{
+                margin-right: 1rem;
+            }
+        }
+    }
 }

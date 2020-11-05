@@ -3,15 +3,25 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import * as classes from './button.module.scss';
 
-const Button = ({ children, type }) => {
+const Button = ({ children, type, fix, funcType }) => {
   const style = [classes.Button];
   if (type === 'red') {
     style.push(classes.Red);
   } else if (type === 'blue') {
     style.push(classes.Blue);
   }
+
+  if (fix === 'fix_2') {
+    style.push(classes.Button_fix_2);
+  }
+
+  let action = 'button';
+  if (funcType) {
+    action = 'submit';
+  }
   return (
-    <button type='button' className={style.join(' ')}>
+    // eslint-disable-next-line react/button-has-type
+    <button className={style.join(' ')} type={action}>
       {children}
     </button>
   );

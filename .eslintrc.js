@@ -30,5 +30,6 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     'react/no-unescaped-entities': 0,
     'react/prop-types': 0,
+    'jsx-a11y/alt-text': 'off',
   },
 };

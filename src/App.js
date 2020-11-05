@@ -1,10 +1,11 @@
 /* eslint-disable react/no-unescaped-entities */
+import { BrowserRouter } from 'react-router-dom';
 import './App.module.scss';
 import * as classes from './App.module.scss';
 import { Header, BookmarkManager } from './components/1-header/Header';
 import {
   FeaturesSection,
-  BookmarkSection,
+  FeaturesTabSection,
 } from './components/2-features/Features';
 import {
   DownloadSection,
@@ -14,16 +15,18 @@ import { FooterConnect, FooterInfo } from './components/4-footer/Footer';
 
 function App() {
   return (
-    <div className={classes.container}>
-      <Header />
-      <BookmarkManager />
-      <FeaturesSection />
-      <BookmarkSection />
-      <DownloadSection />
-      <QuestionsSection />
-      <FooterConnect />
-      <FooterInfo />
-    </div>
+    <BrowserRouter>
+      <div className={classes.container}>
+        <Header />
+        <BookmarkManager />
+        <FeaturesSection />
+        <FeaturesTabSection />
+        <DownloadSection />
+        <QuestionsSection />
+        <FooterConnect />
+        <FooterInfo />
+      </div>
+    </BrowserRouter>
   );
 }
 

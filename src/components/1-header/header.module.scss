@@ -24,12 +24,14 @@
 .BookmarkManager {
     grid-column: center-start/center-end;
     display: grid;
-    grid-template-columns: repeat(2, 55.5rem);
-    align-items: center;
+    grid-template-columns: [first] 55.5rem [second] 55.5rem [third];
+    grid-template-rows: [first-row] minmax(min-content, max-content) [second-row];
+
     .TextSection{
         display: flex;
         flex-direction: column;
         margin-right: 3rem;
+        align-self: center;
         p{
             margin-top: 3rem;
         }
@@ -40,17 +42,31 @@
     }
     
     .ImageSection{
+        grid-column: second / third;
+        grid-row: first-row / second-row;
+
         img{
-            margin-left: 10rem;
+            width: 54rem;
+            height: 35rem;
+            margin-left: 4rem;
             z-index: 100;
+            position: relative;
             border: 2rem solid rgba(black,  .8);
             border-radius: 3rem;
+            margin-top: 4rem;
         }
     }
 
     .ColorShapeSection{
         background-color: var(--base_color_blue);
-        grid-column: col-start 9/ full-end;
+        grid-column: second / third;
+        grid-row: first-row / second-row;
+
+        width: 55rem;
+        height: 40rem;
+        margin-top: 13rem;
+        margin-left: 18rem;
+        border-radius:20rem  0rem 0rem 20rem ;
     }
     
 }

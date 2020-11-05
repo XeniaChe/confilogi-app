@@ -1,9 +1,72 @@
 .FooterConnect{
-    background-color: gray;
+    background-color:var(--base_color_blue);
     grid-column: full-start/full-end;
+
+    display: grid;
+    grid-template-columns:  [full-start] minmax(1.65rem, 1fr )  
+    [center-start] repeat(12, [col-start] minmax(min-content,9.25rem) [col-end] ) [center-end] minmax(1.65rem, 1fr ) [full-end];
+    justify-items: center;
+
+    .ContactBox{
+        grid-column:col-start 5 / col-end 9;
+        color: white;
+        display: grid;
+        justify-items: center;
+        margin-top: 7rem;
+        margin-bottom: 7rem;
+
+        .JoinedCount{
+            text-transform: uppercase;
+            
+            text-align: center;
+        }
+
+        h1{
+            margin-top: 5rem;
+            margin-bottom: 5rem;
+            text-align: center;
+        }
+
+        .contactForm{
+            width: 100%;
+            display: grid;
+            grid-template-columns: 65% 1fr;
+            grid-column-gap: 2rem;
+        }
+    }
+    
 }
 
 .FooterInfo {
-    background-color: blue;
+    background-color: var(--neutral_color_dark-blue);
     grid-column: full-start/full-end;
+
+    display: grid;
+    grid-template-columns:  [full-start] minmax(1.65rem, 1fr )  
+    [center-start] repeat(12, [col-start] minmax(min-content,9.25rem) [col-end] ) [center-end] minmax(1.65rem, 1fr ) [full-end];
+
+    .InfoBox{
+       
+        grid-column: center-start / center-end;
+        .Bookmark{
+            margin-left: 5rem;
+            text-transform: uppercase;
+            display: flex;
+            .LogoBookmark{
+                fill: white;
+                stroke: white;
+            }
+        }
+        .Navigation{
+            ul{
+                display: flex;
+                justify-content: space-evenly;
+                list-style: none;
+            }
+            .NavItem{
+    
+            }
+        }
+    }
+    
 }
