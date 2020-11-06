@@ -1,19 +1,22 @@
+/* eslint-disable jsx-a11y/mouse-events-have-key-events */
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/prop-types */
 import React from 'react';
+import { connect } from 'react-redux';
 import * as classes from './header.module.scss';
 import bookMarkLogo from '../../images/logo-bookmark.svg';
 import ManagerImage from '../../images/illustration-features-tab-1.svg';
 import Button from '../UI/Button';
+import * as actionTypes from '../../store/actionTypes';
 
 const NavItem = (props) => {
   return <li className={classes.NavItem}>{props.children}</li>;
 };
 
-const Header = () => {
+const Header = (props) => {
   return (
-    <div className={classes.Header}>
+    <div className={classes.Header} onMouseOver={props.onCMouseOver}>
       <div className={classes.Bookmark}>
         <img src={bookMarkLogo} />
       </div>
@@ -28,6 +31,21 @@ const Header = () => {
     </div>
   );
 };
+
+const mapStateToProps = (state) => {
+  return {
+    popUpVisibleState: state.popUpVisible,
+  };
+};
+
+const mapDispathcToProps = (dispatch) => {
+  return {
+    onCMouseOver: () => dispatch({ type: actionTypes.ON_MOUSE_OVER }),
+  };
+};
+export default connect(mapStateToProps, mapDispathcToProps)(Header);
+
+/// ///////////////////////////////////////////////////////////////////////////////////////////
 
 const BookmarkManager = () => {
   return (
@@ -56,4 +74,4 @@ const BookmarkManager = () => {
   );
 };
 
-export { Header, BookmarkManager };
+export { BookmarkManager };

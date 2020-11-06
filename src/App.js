@@ -1,10 +1,12 @@
+/* eslint-disable react/destructuring-assignment */
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/no-unescaped-entities */
 import { useEffect, useState } from 'react';
 import { BrowserRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
 import './App.module.scss';
 import * as classes from './App.module.scss';
-import { Header, BookmarkManager } from './components/1-header/Header';
+import Header, { BookmarkManager } from './components/1-header/Header';
 import {
   FeaturesSection,
   FeaturesTabSection,
@@ -15,17 +17,17 @@ import {
 } from './components/3-main-section/MainSection';
 import { FooterConnect, FooterInfo } from './components/4-footer/Footer';
 import PopUp from './components/5-PopUp/PopUp';
+import * as actionTypes from './store/actionTypes';
 
-function App() {
-  const [popUpVisible, setPopUpVisible] = useState(false);
+function App(props) {
   let popUp = null;
-  if (popUpVisible) {
+  if (props.popUpVisibleRedux) {
     popUp = <PopUp />;
   }
 
   useEffect(() => {
     setTimeout(() => {
-      setPopUpVisible(true);
+      props.onSetTimeoutHandler();
     }, 5000);
   }, []);
 
@@ -46,4 +48,15 @@ function App() {
   );
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    popUpVisibleRedux: state.popUpVisible,
+  };
+};
+
+const mapDispathcToProps = (dispatch) => {
+  return {
+    onSetTimeoutHandler: () => dispatch({ type: actionTypes.ON_TIME_INTERVAL }),
+  };
+};
+export default connect(mapStateToProps, mapDispathcToProps)(App);

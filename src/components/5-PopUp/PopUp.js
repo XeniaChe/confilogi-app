@@ -1,10 +1,13 @@
+/* eslint-disable react/destructuring-assignment */
 import React from 'react';
+import { connect } from 'react-redux';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import * as classes from './popUp.module.scss';
 import sourceImage2 from '../../images/illustration-features-tab-2.svg';
 import Button from '../UI/Button';
+import * as actionTypes from '../../store/actionTypes';
 
-const PopUp = () => {
+const PopUp = (props) => {
   const PopUpInfo = {
     title: 'Intelligent search',
     text:
@@ -25,10 +28,28 @@ const PopUp = () => {
             <Button type='blue'>More info</Button>
           </div>
         </div>
-        <a href='#close'>&times;</a>
+        <a
+          href='#close'
+          className={classes.CloseButton}
+          onClick={props.onCloseButtonClick}
+        >
+          &times;
+        </a>
       </div>
     </div>
   );
 };
 
-export default PopUp;
+const mapStateToProps = (state) => {
+  return {
+    popUpVisibleState: state.popUpVisible,
+  };
+};
+
+const mapDispathcToProps = (dispatch) => {
+  return {
+    onCloseButtonClick: () => dispatch({ type: actionTypes.ON_BUTTON_CLICK }),
+  };
+};
+
+export default connect(mapStateToProps, mapDispathcToProps)(PopUp);
