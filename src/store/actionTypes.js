@@ -1,0 +1,3 @@
+export const ON_TIME_INTERVAL = 'ON_TIME_INTERVAL';
+export const ON_MOUSE_OVER = 'ON_MOUSE_OVER';
+export const ON_BUTTON_CLICK = 'ON_BUTTON_CLICK';
