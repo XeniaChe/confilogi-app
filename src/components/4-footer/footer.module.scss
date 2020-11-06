@@ -8,16 +8,17 @@
     justify-items: center;
 
     .ContactBox{
-        grid-column:col-start 5 / col-end 9;
+        grid-column:col-start 4 / col-end 9;
+
         color: white;
         display: grid;
         justify-items: center;
         margin-top: 7rem;
         margin-bottom: 7rem;
+        padding: 0 8rem 0 8rem;
 
         .JoinedCount{
             text-transform: uppercase;
-            
             text-align: center;
         }
 
@@ -46,25 +47,64 @@
     [center-start] repeat(12, [col-start] minmax(min-content,9.25rem) [col-end] ) [center-end] minmax(1.65rem, 1fr ) [full-end];
 
     .InfoBox{
-       
         grid-column: center-start / center-end;
+
+        display: grid;
+        grid-template-columns: repeat(12, [col-start] minmax(min-content,9.25rem) [col-end] );
+        grid-row: [first] min-content [second];
+        align-items: center;
+
+        padding: 1.5rem 0 1.5rem 0 ;
+
         .Bookmark{
-            margin-left: 5rem;
+            grid-column: col-start 1/ col-end 3;
+            grid-row: first / second;
             text-transform: uppercase;
             display: flex;
+
             .LogoBookmark{
-                fill: white;
-                stroke: white;
+                // fill: white;
+                // stroke: white;
+                // color: white;
+                background-color: white;
+                mask-image: url(../../images//logo-bookmark.svg);
+                // background-image: none;
+                // mask-size: cover;
             }
         }
+
         .Navigation{
+            grid-column: col-start 3/ col-end 6;
+            grid-row: first / second;
+            margin-left: -5rem;
+            padding: 0 0rem 0 4rem;
             ul{
                 display: flex;
                 justify-content: space-evenly;
                 list-style: none;
             }
             .NavItem{
-    
+                color: white;
+                text-transform: uppercase;
+                font-size: 1.3rem;
+                transition: all .3s;
+                &:hover{
+                    color: var(--base_color_red)
+                }
+            }
+        }
+
+        .FacebookTwitter{
+            grid-column: col-start 12/ col-end 12;
+            grid-row: first / second;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-column-gap: 2rem;
+            align-items: center;
+
+            img{
+                width: 2,5rem;
+                height: 2,5rem;
             }
         }
     }

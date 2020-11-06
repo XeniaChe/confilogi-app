@@ -91,16 +91,37 @@
         padding: 1.5rem 1rem;
         align-items: center;
         border-bottom: 1px solid var(--neutral_color_gray);
+        transition: all .3s;
 
+        &:hover {
+            color: var(--base_color_red)
+        }
         p{
             margin-left: 1rem;
             margin-right: 5rem;
             justify-self: start;
         }
 
-        img{
+        .Img{
             justify-self: center;
+            .ImgActive{
+                fill: var(--base_color_red);
+                // stroke: var(--base_color_red);
+                filter: invert(10%) sepia(91%) saturate(7488%) hue-rotate(27deg) brightness(81%) contrast(115%);
+            }
         }
+
+        // .Img{
+        //     justify-self: center;
+        //     mask-image: url('../../images/icon-arrow.svg');
+        //     mask-size: cover;
+        //     background-image: none;
+        //     background-color: var(--base_color_blue);
+        //     .ImgActive{
+        //         fill: var(--base_color_red);
+        //         stroke: var(--base_color_red);
+        //     }
+        // }
        
         .AnswerBox{
             grid-column: first / third;

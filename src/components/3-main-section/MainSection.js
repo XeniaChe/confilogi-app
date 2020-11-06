@@ -71,11 +71,15 @@ const DownloadSection = () => {
   );
 };
 
+/// ////////////////////////////////////////////////////////////////////////////////////////////////
+
 const QuestionTab = (props) => {
   const [pushed, setPushed] = useState(false);
+  const [active, setActive] = useState(false);
 
   const buttonClickHandler = () => {
     setPushed(!pushed);
+    setActive(!active);
   };
 
   let answer = null;
@@ -88,10 +92,21 @@ const QuestionTab = (props) => {
     );
   }
 
+  const imgStyle = [classes.Img];
+  if (active) {
+    imgStyle.push(classes.ImgActive);
+  }
+
   return (
     <div className={classes.QuestionTab} onClick={buttonClickHandler}>
       <p>{props.question}</p>
-      <img src={arrowImage} alt='' />
+      <img
+        src={arrowImage}
+        alt=''
+        active={props.active}
+        className={imgStyle.join(' ')}
+      />
+      {/* <span className={imgStyle.join(' ')} /> */}
       {answer}
     </div>
   );
@@ -102,21 +117,25 @@ const questionsInfo = [
     question: 'What is Bopokmark?',
     answer:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
+    active: false,
   },
   {
     question: 'How can I request a new browwser?',
     answer:
       ' Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    active: false,
   },
   {
     question: 'Is there a mobile app?',
     answer:
       'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+    active: false,
   },
   {
     question: 'What about other Chromium browsers?',
     answer:
       ' Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    active: false,
   },
 ];
 

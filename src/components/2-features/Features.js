@@ -20,9 +20,10 @@ const FeaturesTab = (props) => {
   return (
     <div>
       <NavLink
-        to={`/tab${props.id}`}
+        to={props.path}
         activeClassName={classes.NavLink_Active}
         className={classes.NavLink}
+        exact
       >
         {props.title}
       </NavLink>
@@ -32,13 +33,13 @@ const FeaturesTab = (props) => {
 
 const FeaturesSection = () => {
   const featuresTabs = [
-    { id: 1, title: 'Simple Bookmarking' },
-    { id: 2, title: 'Speedy searching' },
-    { id: 3, title: 'Easy sharing' },
+    { id: 1, title: 'Simple Bookmarking', path: '/' },
+    { id: 2, title: 'Speedy searching', path: '/tab2' },
+    { id: 3, title: 'Easy sharing', path: '/tab3' },
   ];
 
   const tabs = featuresTabs.map((el) => (
-    <FeaturesTab title={el.title} key={el.id} id={el.id} />
+    <FeaturesTab title={el.title} key={el.id} path={el.path} />
   ));
 
   return (
@@ -54,33 +55,57 @@ const FeaturesSection = () => {
   );
 };
 
+/// //////////////////////////////////////////////////////////////////////////////////////////
+
 const singleTabsInfo = [
   {
     title: 'Bookmark in one lick',
     text:
       'Organize your bookmark however you like. Our simple drag and drop interface gives you complete control over how you manage your favourite sites.',
     image: sourceImage1,
+    path: '/',
+    exact: true,
   },
   {
     title: 'Intelligent search',
     text:
       'Our powerfull search feature will help you find saved sites in no time at all. No need to trawl through all of your bookmarks. ',
     image: sourceImage2,
+    path: '/tab2',
+    exact: false,
   },
   {
     title: 'Share your bookmarks',
     text:
       'Easily share your bookmarks and collections with others. Create a shareable link that you can send at the click of the button',
     image: sourceImage3,
+    path: '/tab3',
+    exact: false,
   },
 ];
+
+// const TabSingleFirst = (props) => {
+//   return (
+//     <div className={classes.TabSingle}>
+//       <div className={classes.TabImage}>
+//         <LazyLoadImage src={sourceImage1} effect='opacity' />
+//       </div>
+//       <div className={classes.TabText}>
+//         <h1>{singleTabsInfo[0].title}</h1>
+//         <p>{singleTabsInfo[0].text}</p>
+//         <div className={classes.ButtonBox}>
+//           <Button type='blue'>More info</Button>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
 
 const TabSingle = (props) => {
   return (
     <div className={classes.TabSingle}>
       <div className={classes.TabImage}>
         <LazyLoadImage src={props.image} effect='opacity' />
-        {/* <img src={props.image} alt='image' /> */}
       </div>
       <div className={classes.TabText}>
         <h1>{props.title}</h1>
@@ -93,9 +118,10 @@ const TabSingle = (props) => {
   );
 };
 
-const routs = singleTabsInfo.map((el, index) => (
+const routs = singleTabsInfo.map((el) => (
   <Route
-    path={`/tab${index + 1}`}
+    path={el.path}
+    exact={el.exact}
     key={el.title}
     render={() => (
       <LazyLoadComponent>
@@ -113,7 +139,10 @@ const routs = singleTabsInfo.map((el, index) => (
 const FeaturesTabSection = () => {
   return (
     <div className={classes.TabsSection}>
-      <Switch>{routs}</Switch>
+      <Switch>
+        {/* <Route path='/' exact component={TabSingleFirst} /> */}
+        {routs}
+      </Switch>
       <div className={classes.TabColorShape} />
     </div>
   );
