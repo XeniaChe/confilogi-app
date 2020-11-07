@@ -12,7 +12,7 @@
     @include respond(phone-375 ){
         grid-column: full-start/ full-end;
         
-        grid-template-columns:  [full-start] 3rem [center-start] 31.5rem [center-end] 3rem [full-end];
+        grid-template-columns: [full-start] minmax(3rem, 1fr)  [center-start] 31.5rem [center-end] minmax(3rem, 1fr) [full-end];
     }
 
     .InfoBox{

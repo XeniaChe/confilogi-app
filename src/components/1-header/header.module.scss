@@ -1,16 +1,16 @@
 @import '../../sass//mixins';
 
 .Header {
-    grid-column: center-start/center-end;
+    grid-column: center-start/ center-end;
     display: grid;
     grid-template-columns: minmax(61rem , max-content) 39rem 10rem;
     align-items: center;
     
-    @include respond(phone-375 ){
-        grid-column: center-start/ center-end;
+    // @include respond(phone-375 ){
+    //     grid-column: center-start/ center-end;
 
-        grid-template-columns: [full-start]  minmax(min-content,31.5rem) [full-end];
-    }
+    //     grid-template-columns: [full-start] 31.5rem [full-end];
+    // }
 
     .Bookmark{
         margin-left: 5rem;
@@ -142,11 +142,11 @@
             margin-top: 4rem;
 
             @include respond(phone-375 ){
-                width: 29.5rem;
-                height: 19rem;
+                width: 33rem;
+                height: 22rem;
                 border: 1rem solid rgba(black,  .8);
                 border-radius: 1rem;
-                margin-left: 0rem;
+                margin-left: -1rem ;
             }
         }
     }
@@ -169,7 +169,7 @@
             width: 28.5rem;
             height: 20.5rem;
             margin-top: 8.5rem;
-            margin-left: 6rem;
+            margin-left: 9rem;
         }
     }
     

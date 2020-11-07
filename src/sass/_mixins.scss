@@ -10,11 +10,4 @@
         @media (min-width: 112.5em) { @content }
     };
     
-    
-    /*
-    @include respond(tabl-port-800){
-        grid-template-rows: 6rem calc(100vh - 6rem) ;
-     }
-     */
-    
 }
