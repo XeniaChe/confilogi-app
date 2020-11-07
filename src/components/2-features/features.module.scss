@@ -1,17 +1,40 @@
+@import '../../sass//mixins';
+
 .FeaturesSection {
     grid-column: col-start 3/col-end 10;
 
     display: grid;
     justify-items: center;
 
+    @include respond(phone-375 ){
+        grid-column: center-start/ center-end;
+        grid-template-columns: [full-start]  minmax(min-content,31.5rem) [full-end];
+
+        margin-top: 12rem;
+
+    }
+
+    
     h1{
         margin-bottom: 2rem;
         align-self: end;
+
+        @include respond(phone-375 ){
+            align-self: center;
+        }
     }
+
     p{
-        margin-left: 15rem;
-        margin-right: 15rem;
+        margin-left: 10rem;
+        margin-right: 10rem;
         text-align: center;
+        color: var(--neutral_color_gray);
+        line-height: 1.5;
+
+        @include respond(phone-375 ){
+            margin-left: 1rem;
+            margin-right: 1rem;
+        }
     }
 
     .FeaturesTabs{
@@ -21,6 +44,27 @@
         align-self: end;
         margin-bottom: 2.5rem;
         justify-self: stretch;
+
+        @include respond(phone-375 ){
+            margin-top: 3rem;
+
+            display: grid;
+            grid-template-columns: 1fr;
+            justify-items: center;
+            align-items: center;
+            grid-row-gap: 3rem;
+        }
+    }
+
+    .NivLinkBox{
+        @include respond(phone-375 ){
+            border-bottom: 1px solid var(--neutral_color_gray);
+            width: 100%;
+            // padding-bottom: 1rem;
+
+            display: grid;
+            justify-items: center;
+        }
     }
 
     .NavLink{
@@ -28,32 +72,52 @@
         padding: 1rem 2rem  2.5rem 2rem;
         color: inherit;
         transition: all .3s;
-        justify-self: stretch;
+        justify-self: center;
 
+        
+        @include respond(phone-375 ){
+            padding: 2rem 2rem  1rem 2rem;
+        }
          
         &_Active{
             border-bottom: 3px solid var(--base_color_red);
         }
+
         &:hover{
             color: var(--base_color_red);
         }
     }
 }
+
+
 .TabsSection{
     grid-column: center-start/center-end;
     display: grid;
     grid-template-rows: [first-row] minmax(min-content, max-content) [second-row];
     grid-template-columns: [frist] minmax(min-content, max-content)  [second];
     margin-top: 5rem;
+
+    @include respond(phone-375 ){
+        grid-column: center-start/ center-end;
+
+        grid-template-columns: [full-start] 31.5rem [full-end];
+    }
     
     .TabSingle{
-        grid-row: first-row/ second-row;
-        grid-column: first/second;
+        grid-row: first-row / second-row;
+        grid-column: first / second;
 
         display: grid;
         grid-template-columns: [first]55.5rem [second] 55.5rem [fird] ;
         grid-template-rows: [first-row] minmax(min-content, max-content) [second-row];
         align-items: center;
+
+        @include respond(phone-375 ){
+            grid-column:full-start/ full-end;
+
+            grid-template-columns: [first] 31.5rem [second];
+            grid-template-rows: [first-row] minmax(min-content, max-content) [second-row] minmax(min-content, max-content)[third-row];
+        }
 
         .TabText{
             display: flex;
@@ -61,14 +125,26 @@
             margin-left: 6rem;
             grid-column: second / fird;
 
+            @include respond(phone-375 ){
+                grid-column: first / second;
+                grid-row: second-row/ third-row;
+                margin-left: 0;
+                margin-top: 6rem;
+                display: grid;
+            }
+
             p{
                 margin-top: 3rem;
+                color: var(--neutral_color_gray);
+                line-height: 1.5;
             }
 
             .ButtonBox{
                 display: flex;
                 margin-top: 3rem;
             }
+
+            
         }
         
         .TabImage{
@@ -76,23 +152,45 @@
                 z-index: 100;
                 border-radius: 3rem;
                 position: relative;
-         
             }
 
             grid-column: first / second ;
             grid-row: first-row/ second-row;
             margin-top: 5rem;
+
+            @include respond(phone-375 ){
+                grid-column: first / second;
+                grid-row: first-row/ second-row;
+
+                img{
+                    width: 31rem;
+                    height: 20rem;
+                    border-radius: 1rem;
+                }
+            }
         }
        
     }
+
+
     .TabColorShape{
         background-color: var(--base_color_blue);
         grid-row: first-row/ second-row;
-        grid-column: first/second;
+        grid-column: first/ second;
         width: 55rem;
         height: 40rem;
         margin-top: 13rem;
         margin-left: -18rem;
         border-radius: 0rem 20rem 20rem 0rem;
+
+        @include respond(phone-375 ){
+            grid-column:full-start/ full-end;
+
+            width: 28.5rem;
+            height: 20.5rem;
+
+            margin-left: -3rem;
+            margin-top: 8.2rem;
+        }
     }
 }

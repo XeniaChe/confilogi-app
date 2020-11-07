@@ -1,3 +1,5 @@
+@import '../../sass//mixins';
+
 .FooterInfo {
     background-color: var(--neutral_color_dark-blue);
     grid-column: full-start/full-end;
@@ -5,6 +7,13 @@
     display: grid;
     grid-template-columns:  [full-start] minmax(1.65rem, 1fr )  
     [center-start] repeat(12, [col-start] minmax(min-content,9.25rem) [col-end] ) [center-end] minmax(1.65rem, 1fr ) [full-end];
+
+    
+    @include respond(phone-375 ){
+        grid-column: full-start/ full-end;
+        
+        grid-template-columns:  [full-start] 3rem [center-start] 31.5rem [center-end] 3rem [full-end];
+    }
 
     .InfoBox{
         grid-column: center-start / center-end;
@@ -16,11 +25,22 @@
 
         padding: 1.5rem 0 1.5rem 0 ;
 
+        @include respond(phone-375 ){
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
+        }
+
         .Bookmark{
             grid-column: col-start 1/ col-end 3;
             grid-row: first / second;
             text-transform: uppercase;
             display: flex;
+
+            @include respond(phone-375 ){
+                margin-top: 3rem;
+            }
 
             .LogoBookmark{
                 background-color: white;
@@ -37,20 +57,42 @@
             grid-row: first / second;
             margin-left: -5rem;
             padding: 0 0rem 0 4rem;
+
+            @include respond(phone-375 ){
+                margin-top: 3rem;
+                margin-bottom: 3rem;
+                margin-left: 0rem;
+                padding: 0;
+            }
+
             ul{
                 display: flex;
                 justify-content: space-evenly;
                 list-style: none;
+
+                @include respond(phone-375 ){
+                    flex-direction: column;
+                    justify-content: center;
+                }
             }
+
             .NavItem{
                 color: white;
                 text-transform: uppercase;
                 font-size: 1.3rem;
                 transition: all .3s;
                 cursor: pointer;
+
                 &:hover{
                     color: var(--base_color_red)
                 }
+
+                @include respond(phone-375 ){
+                    font-size: 2rem;
+                    margin-bottom: 1rem;
+                    text-align: center;
+                }
+                
             }
         }
 
@@ -62,6 +104,7 @@
             grid-column-gap: 2rem;
             align-items: center;
             
+           
 
             .LogoFacebook,.LogoTwitter {
                 background-color: white;

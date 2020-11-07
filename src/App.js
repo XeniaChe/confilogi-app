@@ -26,12 +26,14 @@ function App(props) {
     popUp = <PopUp />;
   }
 
+  /*
   useEffect(() => {
     setTimeout(() => {
       props.onSetTimeoutHandler();
     }, 5000);
   }, []);
 
+  */
   return (
     <BrowserRouter>
       <div className={classes.container}>

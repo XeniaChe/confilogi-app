@@ -1,3 +1,5 @@
+@import '../../sass//mixins';
+
 .DownloadSection{
     grid-column: col-start 2/col-end 11;
 
@@ -9,9 +11,20 @@
     padding-bottom: 5rem;
     margin-bottom: 10rem;
 
+    @include respond(phone-375 ){
+        grid-column: center-start/ center-end;
+
+        grid-template-columns: [full-start]  minmax(min-content,31.5rem) [full-end];
+    }
+
     h1{
         text-transform: capitalize;
         margin-top: 3rem;
+
+
+        @include respond(phone-375 ){
+           text-align: center;
+        }
     }
 
     p{
@@ -20,12 +33,24 @@
         margin-top: 3rem;
         margin-bottom: 3rem;
         text-align: center;
+        color: var(--neutral_color_gray);
+        line-height: 1.5;
+
+        @include respond(phone-375 ){
+            margin-left: 0rem;
+            margin-right: 0rem;
+        }
     }
 
     .BrowserCardsBox{
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        // grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, minmax(28rem, 1fr));
         grid-column-gap: 4rem;
+
+        @include respond(phone-375 ){
+            grid-template-columns:  minmax( min-content, 28rem);
+        }
     }
 
     .BrowserCard{
@@ -38,6 +63,10 @@
        display: grid;
        justify-items: center;
        align-items: center;
+
+       @include respond(phone-375 ){
+           margin-top:  2rem !important;
+        }
 
        .browserLogo{
            width: 10rem;
@@ -53,7 +82,14 @@
        p{
             margin: -3rem 0 0 0 ;
             padding: 1.5rem 3.5rem;
-            color: var(--neutral_color_gray)
+            color: var(--neutral_color_gray);
+            line-height: 1.5;
+       }
+
+       img{
+            @include respond(phone-375 ){
+                width: 30rem;
+            }
        }
     }
 
@@ -65,6 +101,13 @@
 
     display: grid;
     margin-bottom: 10rem;
+
+    @include respond(phone-375 ){
+        grid-column: center-start/ center-end;
+        
+        grid-template-columns: [full-start]  31.5rem [full-end];
+    }
+
 
     h1{
         text-transform: capitalize;
@@ -93,6 +136,10 @@
         border-bottom: 1px solid var(--neutral_color_gray);
         transition: all .3s;
 
+        @include respond(phone-375 ){
+            grid-template-columns:[first] 28rem [second] 1fr [third];
+        }
+
         &:hover {
             color: var(--base_color_red)
         }
@@ -100,6 +147,7 @@
             margin-left: 1rem;
             margin-right: 5rem;
             justify-self: start;
+            line-height: 1.5;
         }
 
         .Img{
@@ -133,6 +181,7 @@
 
             p{
                 margin-right: 1rem;
+                line-height: 1.5;
             }
         }
     }

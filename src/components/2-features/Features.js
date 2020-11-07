@@ -18,7 +18,7 @@ import Button from '../UI/Button';
 
 const FeaturesTab = (props) => {
   return (
-    <div>
+    <div className={classes.NivLinkBox}>
       <NavLink
         to={props.path}
         activeClassName={classes.NavLink_Active}

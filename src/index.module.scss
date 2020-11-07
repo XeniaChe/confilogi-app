@@ -1,4 +1,5 @@
-  
+@import './sass/mixins';
+
 *,
 *::before,
 *::after {
@@ -18,11 +19,16 @@
 html {
 	box-sizing: border-box;
 	font-size: 62.5%;
+	
+	@include respond(phone-375 ){
+        font-size: 50%;
+    }
 }
 
 body {
 	font-family: var(--font_family_1);
 	// font-weight: 400;
     font-size: 1.8rem;
-    background-color: var(--base_color_white);
+	background-color: var(--base_color_white);
+	
 }

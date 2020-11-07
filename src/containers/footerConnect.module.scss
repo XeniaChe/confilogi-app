@@ -1,11 +1,17 @@
+@import '../sass//mixins';
+
 .FooterConnect{
     background-color:var(--base_color_blue);
     grid-column: full-start/full-end;
 
     display: grid;
-    grid-template-columns:  [full-start] minmax(1.65rem, 1fr )  
-    [center-start] repeat(12, [col-start] minmax(min-content,9.25rem) [col-end] ) [center-end] minmax(1.65rem, 1fr ) [full-end];
+    grid-template-columns:  [full-start] minmax(16.5rem, 1fr )  
+    [center-start] repeat(12, [col-start] minmax(min-content,9.25rem) [col-end] ) [center-end] minmax(16.5rem, 1fr ) [full-end];
     justify-items: center;
+
+    @include respond(phone-375 ){
+        grid-template-columns:  [full-start] 3rem [center-start] 31.5rem [center-end] 3rem [full-end];
+    }
 
     .ContactBox{
         grid-column:col-start 4 / col-end 9;
@@ -16,6 +22,10 @@
         margin-top: 7rem;
         margin-bottom: 7rem;
         padding: 0 8rem 0 8rem;
+
+        @include respond(phone-375 ){
+            grid-column: center-start/ center-end;
+        }
 
         .JoinedCount{
             text-transform: uppercase;

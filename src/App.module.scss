@@ -1,20 +1,13 @@
+@import './sass/mixins';
 
 .container {
     display: grid;
     grid-template-rows: 10vh  minmax(min-content, 56rem) minmax(min-content, 35rem ) minmax(min-content, 51rem ) ;
-    grid-template-columns:  [full-start] minmax(1.65rem, 1fr )  
-    [center-start] repeat(12, [col-start] minmax(min-content,9.25rem) [col-end] ) [center-end] minmax(1.65rem, 1fr ) [full-end];
+    grid-template-columns:  [full-start] minmax(16.5rem, 1fr )  
+    [center-start] repeat(12, [col-start] minmax(min-content,9.25rem) [col-end] ) [center-end] minmax(16.5rem, 1fr ) [full-end];
 
-    /*
-    @include respond(tabl-lands-1000){
-        grid-template-rows: 6rem 80vh min-content 40vw repeat(3, min-content);
-        grid-template-columns: [ full-start] minmax(6rem, 1fr )  
-        [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end] ) [center-end] minmax(6rem, 1fr ) [full-end];
-     }
+   @include respond(phone-375 ){
+      grid-template-columns: [full-start] 3rem [center-start] 31.5rem [center-end] 3rem [full-end]
+   }
 
-     @include respond(tabl-port-800){
-        grid-template-rows: 6rem calc(100vh - 6rem) ;
-     }
-
-     */
 }

@@ -1,8 +1,16 @@
+@import '../../sass//mixins';
+
 .Header {
     grid-column: center-start/center-end;
     display: grid;
     grid-template-columns: minmax(61rem , max-content) 39rem 10rem;
     align-items: center;
+    
+    @include respond(phone-375 ){
+        grid-column: center-start/ center-end;
+
+        grid-template-columns: [full-start]  minmax(min-content,31.5rem) [full-end];
+    }
 
     .Bookmark{
         margin-left: 5rem;
@@ -15,8 +23,11 @@
             justify-content: space-evenly;
             list-style: none;
         }
-        .NavItem{
-
+        
+        
+        @include respond(phone-375 ){
+            opacity: 0;
+            visibility: 0;
         }
     }
 }
@@ -27,16 +38,48 @@
     grid-template-columns: [first] 55.5rem [second] 55.5rem [third];
     grid-template-rows: [first-row] minmax(min-content, max-content) [second-row];
 
+    @include respond(phone-375 ){
+        grid-column: center-start/ center-end;
+
+        grid-template-columns: [full-start]  minmax(min-content,31.5rem) [full-end];
+        grid-template-rows: [first-row] min-content [second-row]  min-content [third-row];
+
+        margin-top: 3rem;
+    }
+        
     .TextSection{
         display: flex;
         flex-direction: column;
         margin-right: 3rem;
         align-self: center;
+
         p{
             margin-top: 3rem;
+            color: var(--neutral_color_gray);
+            line-height: 1.5;
+
+            @include respond(phone-375 ){
+                text-align: center;
+            }
         }
+
+        h1{
+            @include respond(phone-375 ){
+                text-align: center;
+            }
+        }
+        
         .ButtonBox{
             display: flex;
+            margin-top: 3rem;
+        }
+
+        @include respond(phone-375 ){
+            grid-row: second-row / third-row;
+            grid-column: full-start / full-end;
+
+            display: grid;
+            margin-right: 0rem;
             margin-top: 3rem;
         }
     }
@@ -45,6 +88,11 @@
         grid-column: second / third;
         grid-row: first-row / second-row;
 
+        @include respond(phone-375 ){
+            grid-row: first-row / second-row;
+            grid-column: full-start / full-end;
+        }
+        
         img{
             width: 54rem;
             height: 35rem;
@@ -54,6 +102,13 @@
             border: 2rem solid rgba(black,  .8);
             border-radius: 3rem;
             margin-top: 4rem;
+
+            @include respond(phone-375 ){
+                width: 29.5rem;
+                height: 19rem;
+                border: 1rem solid rgba(black,  .8);
+                border-radius: 1rem;
+            }
         }
     }
 
@@ -67,6 +122,16 @@
         margin-top: 13rem;
         margin-left: 18rem;
         border-radius:20rem  0rem 0rem 20rem ;
+
+        @include respond(phone-375 ){
+            grid-row: first-row / second-row;
+            grid-column: full-start / full-end;
+
+            width: 28.5rem;
+            height: 19rem;
+            margin-top: 13rem;
+            margin-left: 6rem;
+        }
     }
     
 }
