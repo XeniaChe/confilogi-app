@@ -27,7 +27,10 @@ const Header = (props) => {
           <NavItem>CONTACT</NavItem>
         </ul>
       </nav>
-      <Button type='red'>LOGIN</Button>
+      {/* <Button type='red' >
+        LOGIN
+      </Button> */}
+      <button type='button'>LOGIN</button>
     </div>
   );
 };

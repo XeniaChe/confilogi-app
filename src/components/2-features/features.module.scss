@@ -21,6 +21,7 @@
 
         @include respond(phone-375 ){
             align-self: center;
+            font-size: 2.5rem;
         }
     }
 
@@ -133,15 +134,31 @@
                 display: grid;
             }
 
+            h1{
+                
+                @include respond(phone-375 ){
+                    text-align: center;
+                    font-size: 2.5rem;
+                }
+            }
+
             p{
                 margin-top: 3rem;
                 color: var(--neutral_color_gray);
                 line-height: 1.5;
+
+                @include respond(phone-375 ){
+                    text-align: center;
+                }
             }
 
             .ButtonBox{
                 display: flex;
                 margin-top: 3rem;
+
+                @include respond(phone-375 ){
+                   justify-content: center;
+                }
             }
 
             

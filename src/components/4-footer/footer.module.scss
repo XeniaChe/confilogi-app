@@ -88,9 +88,10 @@
                 }
 
                 @include respond(phone-375 ){
-                    font-size: 2rem;
+                    font-size: 1.6rem;
                     margin-bottom: 1rem;
                     text-align: center;
+                    padding: 1.5rem;
                 }
                 
             }
@@ -104,7 +105,9 @@
             grid-column-gap: 2rem;
             align-items: center;
             
-           
+            @include respond(phone-375 ){
+                grid-column-gap: 5rem;;
+            }
 
             .LogoFacebook,.LogoTwitter {
                 background-color: white;
@@ -128,9 +131,6 @@
           
 
             svg{
-                // width: 2,5rem;
-                // height: 2,5rem;
-
                 &:hover{
                     fill: red;
                     stroke: var(--base_color_red);
