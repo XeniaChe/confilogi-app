@@ -15,7 +15,8 @@ import {
   DownloadSection,
   QuestionsSection,
 } from './components/3-main-section/MainSection';
-import { FooterConnect, FooterInfo } from './components/4-footer/Footer';
+import FooterInfo from './components/4-footer/Footer';
+import FooterConnect from './containers/FooterConnect';
 import PopUp from './components/5-PopUp/PopUp';
 import * as actionTypes from './store/actionTypes';
 

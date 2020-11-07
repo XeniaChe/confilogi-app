@@ -10,6 +10,7 @@ import dotsImage from '../../images/bg-dots.svg';
 import logoChrome from '../../images/logo-chrome.svg';
 import logoFirefox from '../../images/logo-firefox.svg';
 import logoOpera from '../../images/logo-opera.svg';
+// eslint-disable-next-line no-unused-vars
 import arrowImage from '../../images/icon-arrow.svg';
 
 const BrowserCard = (props) => {
@@ -75,14 +76,14 @@ const DownloadSection = () => {
 
 const QuestionTab = (props) => {
   const [pushed, setPushed] = useState(false);
-  const [active, setActive] = useState(false);
 
   const buttonClickHandler = () => {
     setPushed(!pushed);
-    setActive(!active);
   };
 
   let answer = null;
+  const imgStyle = [classes.Img];
+
   if (pushed) {
     answer = (
       <div className={classes.AnswerBox}>
@@ -90,23 +91,19 @@ const QuestionTab = (props) => {
         <p>{props.answer}</p>
       </div>
     );
-  }
-
-  const imgStyle = [classes.Img];
-  if (active) {
     imgStyle.push(classes.ImgActive);
   }
 
   return (
     <div className={classes.QuestionTab} onClick={buttonClickHandler}>
       <p>{props.question}</p>
-      <img
+      {/* <img
         src={arrowImage}
         alt=''
         active={props.active}
         className={imgStyle.join(' ')}
-      />
-      {/* <span className={imgStyle.join(' ')} /> */}
+      /> */}
+      <div className={imgStyle.join(' ')} />
       {answer}
     </div>
   );
@@ -114,13 +111,13 @@ const QuestionTab = (props) => {
 
 const questionsInfo = [
   {
-    question: 'What is Bopokmark?',
+    question: 'What is Bookmark?',
     answer:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
     active: false,
   },
   {
-    question: 'How can I request a new browwser?',
+    question: 'How can I request a new browser?',
     answer:
       ' Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
     active: false,
