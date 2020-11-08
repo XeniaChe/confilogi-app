@@ -3,8 +3,6 @@
 /* eslint-disable jsx-a11y/mouse-events-have-key-events */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable no-unused-vars */
-/* eslint-disable react/no-unescaped-entities */
-import { useEffect, useState } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import './App.module.scss';

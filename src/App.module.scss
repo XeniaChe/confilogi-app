@@ -1,10 +1,11 @@
 @import './sass/mixins';
 
 .container {
-    display: grid;
-    grid-template-rows: [first-row].5rem [second-row] 10vh [third-row] minmax(min-content, 56rem) [fourth-row] minmax(min-content, 35rem ) [fifth-row] minmax(min-content, 51rem ) [sixth-row];
-    grid-template-columns:  [full-start] minmax(16.5rem, 1fr )  
-    [center-start] repeat(12, [col-start] minmax(min-content,9.25rem) [col-end] ) [center-end] minmax(16.5rem, 1fr ) [full-end];
+   display: grid;
+   grid-template-rows: [first-row].5rem [second-row] 10vh [third-row] minmax(min-content, 56rem) [fourth-row] minmax(min-content, 35rem ) [fifth-row] minmax(min-content, 51rem ) [sixth-row];
+   grid-template-columns:  [full-start] minmax(16.5rem, 1fr )  
+   [center-start] repeat(12, [col-start] minmax(min-content,9.25rem) [col-end] ) [center-end] minmax(16.5rem, 1fr ) [full-end];
+
 
    @include respond(phone-375 ){
       grid-template-columns: [full-start] minmax(3rem, 1fr)  [center-start] 31.5rem [center-end] minmax(3rem, 1fr) [full-end];
@@ -16,7 +17,7 @@
       height: 5px;
    }
 
-    /////////////////////////////////////////////////////////////// 375 RWD Navigation
+   /////////////////////////////////////////////////////////////// 375 RWD Navigation
    .RwdNavBox{
       opacity: 0;
       visibility: hidden;
@@ -52,7 +53,7 @@
             grid-template-columns:[first] max-content [second] 1fr  [third] ;
             margin-top: 3rem;
             margin-left: 0rem;
-            width: 27.5rem;
+            width: 31.5rem;
 
             .RwdNavCloseButton{
                justify-self: end;
@@ -61,6 +62,8 @@
                mask-size: cover;
                width: 2.0rem;
                height: 2.0rem;
+               margin-right: .5rem;
+               margin-top: 1rem;
                transition: all .3s;
                mask-image: url('./images/icon-close.svg');
             }
@@ -68,9 +71,8 @@
 
          .NavigationRWD{
             grid-column:center-start / center-end;
-            // grid-row: second-row / third-row;
 
-            width: 90%;
+            width: 100%;
             margin-top: 2rem;
             margin-bottom: 2rem;
 
@@ -96,7 +98,7 @@
 
             opacity: 1;
             visibility: visible;
-            width: 90%;
+            width: 100%;
 
             border: none;
             cursor: pointer;
@@ -111,6 +113,10 @@
             border-radius: .5rem;
             transition: all .3s;
             border: 2px solid var(--base_color_white);
+
+            &:hover{
+               background-color: rgba(whitesmoke, .5);
+            }
 
             
          }
