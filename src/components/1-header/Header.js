@@ -26,9 +26,6 @@ const Header = (props) => {
           <NavItem>CONTACT</NavItem>
         </ul>
       </nav>
-      {/* <Button type='red' >
-        LOGIN
-      </Button> */}
       <button type='button'>LOGIN</button>
       <div className={classes.RwdNavButton} onClick={props.onShowRwdNavHandler}>
         <span> &nbsp; </span>

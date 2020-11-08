@@ -60,6 +60,7 @@ const FooterConnect = () => {
     });
   }, [emailInput.value]);
 
+  let errorMessage = null;
   const onSubmitHandler = (event) => {
     event.preventDefault();
 
@@ -68,20 +69,23 @@ const FooterConnect = () => {
     console.log('form submitted!');
 
     setFormIsValid(fomValidationCheck);
-  };
-  /// ///////////////////////////////////////////////////////
-  const stringCount = counter.toString();
 
-  let erorrVarning = null;
+    if (!fomValidationCheck || emailInput.value === '') {
+      errorMessage = <label htmlFor='email'> Whoops!</label>;
+    }
+  };
+
+  /// ///////////////////////////////////////////////////////
+  let erorrSign = null;
 
   if (emailInput.touched && !emailInput.isValid) {
-    erorrVarning = <img src={errorImage} className={classes.ErrorImg} />;
+    erorrSign = <img src={errorImage} className={classes.ErrorImg} />;
   }
 
   return (
     <div className={classes.FooterConnect}>
       <div className={classes.ContactBox}>
-        <p className={classes.JoinedCount}>{stringCount}+ alredy joined</p>
+        <p className={classes.JoinedCount}>{counter}+ alredy joined</p>
         <h1>Stay up-to-date with what we're doing</h1>
         <form className={classes.contactForm} onSubmit={onSubmitHandler}>
           <input
@@ -92,7 +96,8 @@ const FooterConnect = () => {
             onChange={InputChangeHandler}
             value={emailInput.value}
           />
-          {erorrVarning}
+          {erorrSign}
+          {errorMessage}
           <Button type='red' funcType='submit'>
             Contact Us
           </Button>
