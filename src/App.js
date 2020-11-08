@@ -3,6 +3,7 @@
 /* eslint-disable jsx-a11y/mouse-events-have-key-events */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable no-unused-vars */
+import React, { useEffect } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import './App.module.scss';
@@ -28,14 +29,11 @@ const NavItem = (props) => {
 };
 
 function App(props) {
-  /*
   useEffect(() => {
     setTimeout(() => {
       props.onSetTimeoutHandler();
     }, 5000);
   }, []);
-
-  */
 
   let popUp = null;
   if (props.popUpVisibleRedux) {
