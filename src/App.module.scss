@@ -2,7 +2,7 @@
 
 .container {
     display: grid;
-    grid-template-rows: 10vh  minmax(min-content, 56rem) minmax(min-content, 35rem ) minmax(min-content, 51rem ) ;
+    grid-template-rows: .5rem 10vh  minmax(min-content, 56rem) minmax(min-content, 35rem ) minmax(min-content, 51rem ) ;
     grid-template-columns:  [full-start] minmax(16.5rem, 1fr )  
     [center-start] repeat(12, [col-start] minmax(min-content,9.25rem) [col-end] ) [center-end] minmax(16.5rem, 1fr ) [full-end];
 
@@ -10,4 +10,9 @@
       grid-template-columns: [full-start] minmax(3rem, 1fr)  [center-start] 31.5rem [center-end] minmax(3rem, 1fr) [full-end];
    }
 
+
+   .ForPopUp{
+      grid-column: full-start/ full-end;
+      height: 5px;
+   }
 }

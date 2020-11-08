@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/mouse-events-have-key-events */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/no-unescaped-entities */
@@ -37,6 +38,7 @@ function App(props) {
   return (
     <BrowserRouter>
       <div className={classes.container}>
+        <span className={classes.ForPopUp} onMouseOver={props.onCMouseOver} />
         <Header />
         <BookmarkManager />
         <FeaturesSection />
@@ -60,6 +62,7 @@ const mapStateToProps = (state) => {
 const mapDispathcToProps = (dispatch) => {
   return {
     onSetTimeoutHandler: () => dispatch({ type: actionTypes.ON_TIME_INTERVAL }),
+    onCMouseOver: () => dispatch({ type: actionTypes.ON_MOUSE_OVER }),
   };
 };
 export default connect(mapStateToProps, mapDispathcToProps)(App);

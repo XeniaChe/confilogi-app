@@ -1,3 +1,4 @@
+@import '../../sass/mixins';
 
 .PopUpModal{
 
@@ -28,6 +29,18 @@
         width: 80vw;
         padding:0 4rem 0 4rem;
 
+        
+        @include respond(phone-375 ){
+            grid-column:full-start/ full-end;
+
+            width: 90vw;
+            height:60rem;
+            grid-template-columns: [first] 31.5rem [second];
+            grid-template-rows: [first-row] minmax(min-content, max-content) [second-row] minmax(min-content, max-content)[third-row];
+
+            padding: 3rem;
+        }
+
         .TabText{
             display: flex;
             flex-direction: column;
@@ -35,34 +48,76 @@
             grid-column: second / fird;
             grid-row: first-row/ second-row;
 
+            
+            @include respond(phone-375 ){
+                grid-column: first / second;
+                grid-row: second-row/ third-row;
+                margin-left: 0;
+                margin-top: 6rem;
+                display: grid;
+            }
+
+
+            h1{
+                @include respond(phone-375 ){
+                    text-align: center;
+                    font-size: 2.5rem;
+                }
+            }
+
             p{
                 margin-top: 3rem;
+                color: var(--neutral_color_gray);
+                line-height: 1.5;
+
+                @include respond(phone-375 ){
+                    text-align: center;
+                }
             }
 
             .ButtonBox{
                 display: flex;
                 margin-top: 3rem;
+
+                @include respond(phone-375 ){
+                    justify-content: center;
+                   
+                }
             }
         }
         
         .TabImage{
+         
             img{
                 z-index: 100;
                 border-radius: 3rem;
                 position: relative;
-         
             }
 
             grid-column: first / second ;
             grid-row: first-row/ second-row;
             margin-top: 5rem;
+
+            @include respond(phone-375 ){
+                grid-column: first / second ;
+                grid-row:first-row / second-row ;
+
+                img{
+                    width: 31rem;
+                    height: 20rem;
+                    border-radius: 1rem;
+                }
+            }
         }
 
         .CloseButton{
+
             &:link, &:visited{
                 grid-column: second / fird ;
                 grid-row: first-row/ second-row;
                 z-index: 100;
+                position: relative;
+
                 justify-self: end;
                 align-self: start;
                 margin: 2rem;
@@ -71,6 +126,12 @@
                 color: var(--neutral_color_gray);
                 font-size: 3rem;
                 transition: all .3s;
+            }
+
+            @include respond(phone-375 ){
+                grid-column: first / second ;
+                grid-row:first-row / second-row ;
+                margin: 0rem;
             }
 
             &:hover{

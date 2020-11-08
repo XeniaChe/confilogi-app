@@ -1,22 +1,65 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/mouse-events-have-key-events */
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/prop-types */
-import React from 'react';
-import { connect } from 'react-redux';
+import React, { useState } from 'react';
 import * as classes from './header.module.scss';
 import bookMarkLogo from '../../images/logo-bookmark.svg';
 import ManagerImage from '../../images/illustration-features-tab-1.svg';
 import Button from '../UI/Button';
-import * as actionTypes from '../../store/actionTypes';
 
 const NavItem = (props) => {
   return <li className={classes.NavItem}>{props.children}</li>;
 };
 
 const Header = (props) => {
+  let rwdNav = null;
+
+  const [RwdNavVisible, setRwdNavVisible] = useState(false);
+
+  const onShowRwdNavHandler = () => {
+    setRwdNavVisible(true);
+  };
+
+  const onCloseRwdNavHandler = () => {
+    setRwdNavVisible(!RwdNavVisible);
+  };
+
+  // const condition = true;
+  if (RwdNavVisible) {
+    rwdNav = (
+      <div className={classes.RwdNavBox}>
+        <div className={classes.RWDBookmark}>
+          <img src={bookMarkLogo} />
+        </div>
+        <div
+          className={classes.RwdNavCloseButton}
+          onClick={onCloseRwdNavHandler}
+        />
+        <nav className={classes.NavigationRWD}>
+          <ul className={classes.NavRwdList}>
+            <NavItem>FEATURES</NavItem>
+            <NavItem>PRICING</NavItem>
+            <NavItem>CONTACT</NavItem>
+          </ul>
+        </nav>
+        <button type='button' className={classes.RwdNavButtonLogIn}>
+          LOGIN
+        </button>
+        <div className={classes.RwgFacebookTwitter}>
+          {/* <img src={LogoFacebook} alt='' /> */}
+          {/* <img src={LogoTwitter} alt='' /> */}
+          <div className={classes.LogoFacebook} />
+          <div className={classes.LogoTwitter} />
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <div className={classes.Header} onMouseOver={props.onCMouseOver}>
+    <div className={classes.Header}>
       <div className={classes.Bookmark}>
         <img src={bookMarkLogo} />
       </div>
@@ -31,22 +74,15 @@ const Header = (props) => {
         LOGIN
       </Button> */}
       <button type='button'>LOGIN</button>
+      <div className={classes.RwdNavButton} onClick={onShowRwdNavHandler}>
+        <span> &nbsp; </span>
+      </div>
+      {rwdNav}
     </div>
   );
 };
 
-const mapStateToProps = (state) => {
-  return {
-    popUpVisibleState: state.popUpVisible,
-  };
-};
-
-const mapDispathcToProps = (dispatch) => {
-  return {
-    onCMouseOver: () => dispatch({ type: actionTypes.ON_MOUSE_OVER }),
-  };
-};
-export default connect(mapStateToProps, mapDispathcToProps)(Header);
+export default Header;
 
 /// ///////////////////////////////////////////////////////////////////////////////////////////
 
