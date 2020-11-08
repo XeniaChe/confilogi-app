@@ -17,3 +17,17 @@ export const ontButtonClick = () => {
     type: actionTypes.ON_BUTTON_CLICK,
   };
 };
+
+/// //////////////// RwdVaigation
+
+export const onRwdNavOpen = () => {
+  return {
+    type: actionTypes.ON_OPEN_RWDNAVBOX,
+  };
+};
+
+export const onRwdNavClose = () => {
+  return {
+    type: actionTypes.ON_CLOSE_RWDNAVBOX,
+  };
+};

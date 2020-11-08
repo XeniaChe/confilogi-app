@@ -25,7 +25,7 @@ const onMouseOver = (state, action) => {
   };
 };
 
-const reducer = (state = initialState, action) => {
+const reducerPopUp = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.ON_TIME_INTERVAL:
       return onTimeInterval(state, action);
@@ -39,4 +39,4 @@ const reducer = (state = initialState, action) => {
   }
 };
 
-export default reducer;
+export default reducerPopUp;

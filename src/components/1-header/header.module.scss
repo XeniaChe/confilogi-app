@@ -10,6 +10,8 @@
     margin-top: 5rem;
 
     @include respond(phone-375 ){
+        grid-row: second-row / third-row;
+
         margin-top: 3rem;
         grid-template-columns:[first] max-content [second] 1fr  [third] ;
         grid-template-rows: [first-row] max-content [second-row] max-content [third-row];
@@ -81,7 +83,6 @@
         }
     }
 
-
     /////////////////////////////////////////////////////////////// 375 RWD Navigation
     .RwdNavButton{
         opacity: 0;
@@ -128,128 +129,6 @@
         
     }
 
-    /////////////NAVIGATION BOX
-    .RwdNavBox{
-        opacity: 0;
-        visibility: hidden;
-        display: none;
-        
-        
-        @include respond(phone-375 ){
-            grid-column: first / third;
-            grid-row: first-row / third-row;
-
-            display: grid;
-            grid-template-columns:[first] max-content [second] 1fr  [third] ;
-            grid-template-rows: [first-row] max-content [second-row] max-content [third-row] max-content [fourth-row] ;
-
-            z-index: 1000;
-            position: relative;
-            opacity: 1;
-            visibility: visible;
-            align-items: center;
-            justify-items: center;
-
-            width: 100%;
-
-            background-color: rgba($color: #000000, $alpha: .5);
-            padding-bottom: 5rem;
-
-            .RWDBookmark{
-                grid-column: first / second;
-                grid-row: first-row / second-row;
-
-                margin-left: 0rem;
-                width: 27.5rem;
-            }
-
-            .NavigationRWD{
-                grid-column: first / third;
-                grid-row: second-row / third-row;
-
-                width: 90%;
-                margin-top: 2rem;
-                margin-bottom: 2rem;
-
-                .NavRwdList{
-                    display: grid;
-                    justify-items: center;
-                    list-style: none;
-                }
-
-                .NavRwdList .NavItem{
-                    color: var(--base_color_white);
-                    padding: 2rem;
-                    cursor: pointer;
-                    width: 100%;
-                    text-align: center;
-                    border-bottom: 1px solid var(--base_color_white);
-                }
-            }
-
-            .RwdNavButtonLogIn{
-                grid-column: first / third;
-                grid-row: third-row / fourth-row;
-
-                opacity: 1;
-                visibility: visible;
-                width: 90%;
-
-                border: none;
-                cursor: pointer;
-                display: inline-block;
-                font-family: inherit;
-
-                padding: 1rem 2rem;
-                margin-bottom: 18rem;
-                
-                color: var(--base_color_white);
-                background-color: transparent;
-                border-radius: .5rem;
-                transition: all .3s;
-                border: 2px solid var(--base_color_white);
-
-                
-            }
-            .RwdNavCloseButton{
-                background-color: var(--base_color_white);
-                mask-size: cover;
-                width: 2.0rem;
-                height: 2.0rem;
-                transition: all .3s;
-                mask-image: url(../../images/icon-close.svg);
-            }
-
-            .RwgFacebookTwitter{
-                grid-column: first / third;
-
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                grid-column-gap: 2rem;
-                align-items: center;
-                justify-items: center;
-                padding: 0 4rem 0 4rem;
-                width: 90%;
-
-                .LogoFacebook,.LogoTwitter {
-                    background-color: var(--base_color_white);
-                    mask-size: cover;
-                    width: 2.5rem;
-                    height: 2.5rem;
-                    transition: all .3s;
-    
-                } 
-    
-                .LogoFacebook{
-                    mask-image: url(../../images/icon-facebook.svg);
-                }
-    
-                .LogoTwitter{
-                    mask-image: url(../../images/icon-twitter.svg);
-                }
-            }
-        }
-    }
 }
 
 .BookmarkManager {
@@ -260,6 +139,7 @@
 
     @include respond(phone-375 ){
         grid-column: center-start/ center-end;
+        grid-row: third-row / fourth-row;
 
         grid-template-columns: [full-start] 31.5rem [full-end];
         grid-template-rows: [first-row] min-content [second-row]  min-content [third-row];

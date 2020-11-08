@@ -2,7 +2,7 @@
 
 .container {
     display: grid;
-    grid-template-rows: .5rem 10vh  minmax(min-content, 56rem) minmax(min-content, 35rem ) minmax(min-content, 51rem ) ;
+    grid-template-rows: [first-row].5rem [second-row] 10vh [third-row] minmax(min-content, 56rem) [fourth-row] minmax(min-content, 35rem ) [fifth-row] minmax(min-content, 51rem ) [sixth-row];
     grid-template-columns:  [full-start] minmax(16.5rem, 1fr )  
     [center-start] repeat(12, [col-start] minmax(min-content,9.25rem) [col-end] ) [center-end] minmax(16.5rem, 1fr ) [full-end];
 
@@ -15,4 +15,136 @@
       grid-column: full-start/ full-end;
       height: 5px;
    }
+
+    /////////////////////////////////////////////////////////////// 375 RWD Navigation
+   .RwdNavBox{
+      opacity: 0;
+      visibility: hidden;
+      display: none;
+      
+      
+      @include respond(phone-375 ){
+         grid-column: full-start / full-end;
+         grid-row: second-row / fourth-row;
+
+         display: grid;
+         grid-template-columns: [full-start] minmax(3rem, 1fr)  [center-start] 31.5rem [center-end] minmax(3rem, 1fr) [full-end];
+         grid-template-rows: [first-row] max-content [second-row] max-content [third-row];
+
+         z-index: 1000;
+         position: relative;
+         opacity: 1;
+         visibility: visible;
+         align-items: center;
+         justify-items: center;
+
+         width: 100%;
+
+
+         background-color: rgba($color: #252836, $alpha: .9);
+         padding-bottom: 5rem;
+
+         .RWDBookmark{
+            grid-column: center-start / center-end;
+            grid-row: first-row / second-row;
+
+            display: grid;
+            grid-template-columns:[first] max-content [second] 1fr  [third] ;
+            margin-top: 3rem;
+            margin-left: 0rem;
+            width: 27.5rem;
+
+            .RwdNavCloseButton{
+               justify-self: end;
+
+               background-color: var(--base_color_white);
+               mask-size: cover;
+               width: 2.0rem;
+               height: 2.0rem;
+               transition: all .3s;
+               mask-image: url('./images/icon-close.svg');
+            }
+         }
+
+         .NavigationRWD{
+            grid-column:center-start / center-end;
+            // grid-row: second-row / third-row;
+
+            width: 90%;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+
+            .NavRwdList{
+               display: grid;
+               justify-items: center;
+               list-style: none;
+            }
+
+            .NavItem{
+               color: var(--base_color_white);
+               padding: 2rem;
+               cursor: pointer;
+               width: 100%;
+               text-align: center;
+               border-bottom: 1px solid var(--base_color_white);
+            }
+         }
+
+         .RwdNavButtonLogIn{
+            grid-column:center-start / center-end;
+            grid-row: third-row / fourth-row;
+
+            opacity: 1;
+            visibility: visible;
+            width: 90%;
+
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+            font-family: inherit;
+
+            padding: 1rem 2rem;
+            margin-bottom: 18rem;
+            
+            color: var(--base_color_white);
+            background-color: transparent;
+            border-radius: .5rem;
+            transition: all .3s;
+            border: 2px solid var(--base_color_white);
+
+            
+         }
+        
+
+         .RwgFacebookTwitter{
+            grid-column:center-start / center-end;
+
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-column-gap: 2rem;
+            align-items: center;
+            justify-items: center;
+            padding: 0 4rem 0 4rem;
+            width: 90%;
+
+            .LogoFacebook,.LogoTwitter {
+               background-color: var(--base_color_white);
+               mask-size: cover;
+               width: 2.5rem;
+               height: 2.5rem;
+               transition: all .3s;
+
+            } 
+
+            .LogoFacebook{
+               mask-image: url('./images/icon-facebook.svg');
+            }
+
+            .LogoTwitter{
+               mask-image: url('./images/icon-twitter.svg');
+            }
+         }
+      }
+   }
+
 }

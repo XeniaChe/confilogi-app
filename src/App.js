@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/mouse-events-have-key-events */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable no-unused-vars */
@@ -19,14 +21,15 @@ import {
 import FooterInfo from './components/4-footer/Footer';
 import FooterConnect from './containers/FooterConnect';
 import PopUp from './components/5-PopUp/PopUp';
-import * as actionTypes from './store/actionTypes';
+import * as actions from './store/actionCreator';
+
+import bookMarkLogo from './images/logo-bookmark.svg';
+
+const NavItem = (props) => {
+  return <li className={classes.NavItem}>{props.children}</li>;
+};
 
 function App(props) {
-  let popUp = null;
-  if (props.popUpVisibleRedux) {
-    popUp = <PopUp />;
-  }
-
   /*
   useEffect(() => {
     setTimeout(() => {
@@ -35,11 +38,47 @@ function App(props) {
   }, []);
 
   */
+
+  let popUp = null;
+  if (props.popUpVisibleRedux) {
+    popUp = <PopUp />;
+  }
+
+  let RwdNav = null;
+  if (props.rwdNavVisibleRedux) {
+    RwdNav = (
+      <div className={classes.RwdNavBox}>
+        <div className={classes.RWDBookmark}>
+          <img src={bookMarkLogo} />
+          <div
+            className={classes.RwdNavCloseButton}
+            onClick={props.onCloseRwdNavHandler}
+          />
+        </div>
+        <nav className={classes.NavigationRWD}>
+          <ul className={classes.NavRwdList}>
+            <NavItem>FEATURES</NavItem>
+            <NavItem>PRICING</NavItem>
+            <NavItem>CONTACT</NavItem>
+          </ul>
+        </nav>
+        <button type='button' className={classes.RwdNavButtonLogIn}>
+          LOGIN
+        </button>
+        <div className={classes.RwgFacebookTwitter}>
+          <div className={classes.LogoFacebook} />
+          <div className={classes.LogoTwitter} />
+        </div>
+      </div>
+    );
+  }
+
   return (
     <BrowserRouter>
       <div className={classes.container}>
         <span className={classes.ForPopUp} onMouseOver={props.onCMouseOver} />
         <Header />
+        {RwdNav}
         <BookmarkManager />
         <FeaturesSection />
         <FeaturesTabSection />
@@ -55,14 +94,17 @@ function App(props) {
 
 const mapStateToProps = (state) => {
   return {
-    popUpVisibleRedux: state.popUpVisible,
+    popUpVisibleRedux: state.popUp.popUpVisible,
+    rwdNavVisibleRedux: state.RwdNAw.RwdNavVisible,
   };
 };
 
 const mapDispathcToProps = (dispatch) => {
   return {
-    onSetTimeoutHandler: () => dispatch({ type: actionTypes.ON_TIME_INTERVAL }),
-    onCMouseOver: () => dispatch({ type: actionTypes.ON_MOUSE_OVER }),
+    onSetTimeoutHandler: () => dispatch(actions.ontTimeInterval()),
+    onCMouseOver: () => dispatch(actions.ontMouseOver()),
+    onCloseRwdNavHandler: () => dispatch(actions.onRwdNavClose()),
   };
 };
+
 export default connect(mapStateToProps, mapDispathcToProps)(App);
