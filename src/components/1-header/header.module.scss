@@ -40,6 +40,11 @@
 
         .NavItem{
             cursor: pointer;
+            transition: all .3s;
+            
+            &:hover{
+                color: var(--base_color_red);
+            }
         }
 
         ul{
