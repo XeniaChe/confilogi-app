@@ -65,7 +65,7 @@
                margin-right: .5rem;
                margin-top: 1rem;
                transition: all .3s;
-               mask-image: url('./images/icon-close.svg');
+               mask-image: url(./images/icon-close.svg);
             }
          }
 
@@ -143,11 +143,11 @@
             } 
 
             .LogoFacebook{
-               mask-image: url('./images/icon-facebook.svg');
+               mask-image: url(./images/icon-facebook.svg);
             }
 
             .LogoTwitter{
-               mask-image: url('./images/icon-twitter.svg');
+               mask-image: url(./images/icon-twitter.svg);
             }
          }
       }
