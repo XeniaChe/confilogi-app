@@ -4,8 +4,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import * as classes from './header.module.scss';
-import bookMarkLogo from '../../images/logo-bookmark.svg';
+
 import ManagerImage from '../../images/illustration-features-tab-1.svg';
+import { ReactComponent as BookMarkLogo } from '../../images/logo-bookmark.svg';
+
 import Button from '../UI/Button';
 import * as actions from '../../store/actionCreator';
 
@@ -17,7 +19,7 @@ const Header = (props) => {
   return (
     <div className={classes.Header}>
       <div className={classes.Bookmark}>
-        <img src={bookMarkLogo} />
+        <BookMarkLogo />
       </div>
       <nav className={classes.Navigation}>
         <ul>
