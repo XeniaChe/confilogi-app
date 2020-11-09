@@ -2,9 +2,10 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react';
 import * as classes from './footer.module.scss';
-import bookMarkLogo from '../../images/logo-bookmark.svg';
-// import LogoFacebook from '../../images/icon-facebook.svg';
-// import LogoTwitter from '../../images/icon-twitter.svg';
+
+import { ReactComponent as LogoFacebook } from '../../images/icon-facebook.svg';
+import { ReactComponent as LogoTwitter } from '../../images/icon-twitter.svg';
+import { ReactComponent as BookMarkLogo } from '../../images/logo-bookmark.svg';
 
 const NavItem = (props) => {
   return <li className={classes.NavItem}>{props.children}</li>;
@@ -15,7 +16,7 @@ const FooterInfo = () => {
     <div className={classes.FooterInfo}>
       <div className={classes.InfoBox}>
         <div className={classes.Bookmark}>
-          <img src={bookMarkLogo} alt='' className={classes.LogoBookmark} />
+          <BookMarkLogo className={classes.LogoBookmark} />
           {/* <div className={classes.LogoBookmark} /> */}
         </div>
         <nav className={classes.Navigation}>
@@ -26,10 +27,10 @@ const FooterInfo = () => {
           </ul>
         </nav>
         <div className={classes.FacebookTwitter}>
-          {/* <img src={LogoFacebook} alt='' /> */}
-          {/* <img src={LogoTwitter} alt='' /> */}
-          <div className={classes.LogoFacebook} />
-          <div className={classes.LogoTwitter} />
+          <LogoFacebook />
+          <LogoTwitter />
+          {/* <div className={classes.LogoFacebook} />
+          <div className={classes.LogoTwitter} /> */}
         </div>
       </div>
     </div>

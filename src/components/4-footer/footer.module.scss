@@ -30,6 +30,7 @@
             flex-direction: column;
             justify-content: center;
             align-content: center;
+            margin-bottom: 2rem;
         }
 
         .Bookmark{
@@ -40,15 +41,27 @@
 
             @include respond(phone-375 ){
                 margin-top: 3rem;
+                margin-left: -1rem;
+
             }
 
+            // .LogoBookmark{
+            //     background-color: white;
+            //     mask-image: url(../../images//logo-bookmark.svg);
+            //     background-image: none;
+            //     mask-size: cover;
+            //     width: 15rem;
+            //     height: 2.5rem;
+            // }
+            
             .LogoBookmark{
-                background-color: white;
-                mask-image: url(../../images//logo-bookmark.svg);
-                background-image: none;
-                mask-size: cover;
-                width: 15rem;
-                height: 2.5rem;
+               fill: white;
+               stroke: white;
+
+               &:hover{
+                    fill:  var(--base_color_red);
+                    stroke:  var(--base_color_red);
+               }
             }
         }
 
@@ -106,7 +119,7 @@
             align-items: center;
             
             @include respond(phone-375 ){
-                grid-column-gap: 5rem;;
+                grid-column-gap: 5rem;
             }
 
             .LogoFacebook,.LogoTwitter {
@@ -131,8 +144,9 @@
           
 
             svg{
+
                 &:hover{
-                    fill: red;
+                    fill: var(--base_color_red) !important ;
                     stroke: var(--base_color_red);
                 }
             }
