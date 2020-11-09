@@ -84,23 +84,6 @@ const singleTabsInfo = [
   },
 ];
 
-// const TabSingleFirst = (props) => {
-//   return (
-//     <div className={classes.TabSingle}>
-//       <div className={classes.TabImage}>
-//         <LazyLoadImage src={sourceImage1} effect='opacity' />
-//       </div>
-//       <div className={classes.TabText}>
-//         <h1>{singleTabsInfo[0].title}</h1>
-//         <p>{singleTabsInfo[0].text}</p>
-//         <div className={classes.ButtonBox}>
-//           <Button type='blue'>More info</Button>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
 const TabSingle = (props) => {
   return (
     <div className={classes.TabSingle}>
@@ -139,10 +122,7 @@ const routs = singleTabsInfo.map((el) => (
 const FeaturesTabSection = () => {
   return (
     <div className={classes.TabsSection}>
-      <Switch>
-        {/* <Route path='/' exact component={TabSingleFirst} /> */}
-        {routs}
-      </Switch>
+      <Switch>{routs}</Switch>
       <div className={classes.TabColorShape} />
     </div>
   );
