@@ -1,6 +1,3 @@
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-/* eslint-disable react/destructuring-assignment */
 import React from 'react';
 import { connect } from 'react-redux';
 import * as classes from './header.module.scss';
@@ -11,11 +8,11 @@ import { ReactComponent as BookMarkLogo } from '../../images/logo-bookmark.svg';
 import Button from '../UI/Button';
 import * as actions from '../../store/actionCreator';
 
-const NavItem = (props) => {
-  return <li className={classes.NavItem}>{props.children}</li>;
+const NavItem = ({ children }) => {
+  return <li className={classes.NavItem}>{children}</li>;
 };
 
-const Header = (props) => {
+const Header = ({ onShowRwdNavHandler }) => {
   return (
     <div className={classes.Header}>
       <div className={classes.Bookmark}>
@@ -29,7 +26,13 @@ const Header = (props) => {
         </ul>
       </nav>
       <button type='button'>LOGIN</button>
-      <div className={classes.RwdNavButton} onClick={props.onShowRwdNavHandler}>
+      <div
+        className={classes.RwdNavButton}
+        onClick={onShowRwdNavHandler}
+        onKeyDown={() => {}}
+        role='button'
+        tabIndex={0}
+      >
         <span> &nbsp; </span>
       </div>
     </div>

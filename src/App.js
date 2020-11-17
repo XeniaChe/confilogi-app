@@ -1,8 +1,3 @@
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-/* eslint-disable jsx-a11y/mouse-events-have-key-events */
-/* eslint-disable react/destructuring-assignment */
-/* eslint-disable no-unused-vars */
 import React, { useEffect } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -24,31 +19,40 @@ import * as actions from './store/actionCreator';
 
 import bookMarkLogo from './images/logo-bookmark.svg';
 
-const NavItem = (props) => {
-  return <li className={classes.NavItem}>{props.children}</li>;
+const NavItem = ({ children }) => {
+  return <li className={classes.NavItem}>{children}</li>;
 };
 
-function App(props) {
+function App({
+  popUpVisibleRedux,
+  rwdNavVisibleRedux,
+  onSetTimeoutHandler,
+  onCloseRwdNavHandler,
+  onCMouseOver,
+}) {
   useEffect(() => {
     setTimeout(() => {
-      props.onSetTimeoutHandler();
+      onSetTimeoutHandler();
     }, 5000);
   }, []);
 
   let popUp = null;
-  if (props.popUpVisibleRedux) {
+  if (popUpVisibleRedux) {
     popUp = <PopUp />;
   }
 
   let RwdNav = null;
-  if (props.rwdNavVisibleRedux) {
+  if (rwdNavVisibleRedux) {
     RwdNav = (
       <div className={classes.RwdNavBox}>
         <div className={classes.RWDBookmark}>
           <img src={bookMarkLogo} />
           <div
             className={classes.RwdNavCloseButton}
-            onClick={props.onCloseRwdNavHandler}
+            onClick={onCloseRwdNavHandler}
+            onKeyDown={() => {}}
+            role='button'
+            tabIndex={0}
           />
         </div>
         <nav className={classes.NavigationRWD}>
@@ -72,7 +76,12 @@ function App(props) {
   return (
     <BrowserRouter>
       <div className={classes.container}>
-        <span className={classes.ForPopUp} onMouseOver={props.onCMouseOver} />
+        <span
+          className={classes.ForPopUp}
+          onMouseOver={onCMouseOver}
+          onFocus={() => {}}
+          role='toolbar'
+        />
         <Header />
         {RwdNav}
         <BookmarkManager />

@@ -1,6 +1,3 @@
-/* eslint-disable jsx-a11y/img-redundant-alt */
-/* eslint-disable react/destructuring-assignment */
-/* eslint-disable react/no-unescaped-entities */
 import React from 'react';
 import { Route, NavLink, Switch } from 'react-router-dom';
 import {
@@ -16,16 +13,16 @@ import sourceImage3 from '../../images/illustration-features-tab-3.svg';
 
 import Button from '../UI/Button';
 
-const FeaturesTab = (props) => {
+const FeaturesTab = ({ path, title }) => {
   return (
     <div className={classes.NivLinkBox}>
       <NavLink
-        to={props.path}
+        to={path}
         activeClassName={classes.NavLink_Active}
         className={classes.NavLink}
         exact
       >
-        {props.title}
+        {title}
       </NavLink>
     </div>
   );
@@ -84,15 +81,15 @@ const singleTabsInfo = [
   },
 ];
 
-const TabSingle = (props) => {
+const TabSingle = ({ image, title, text }) => {
   return (
     <div className={classes.TabSingle}>
       <div className={classes.TabImage}>
-        <LazyLoadImage src={props.image} effect='opacity' />
+        <LazyLoadImage src={image} effect='opacity' />
       </div>
       <div className={classes.TabText}>
-        <h1>{props.title}</h1>
-        <p>{props.text}</p>
+        <h1>{title}</h1>
+        <p>{text}</p>
         <div className={classes.ButtonBox}>
           <Button type='blue'>More info</Button>
         </div>

@@ -1,7 +1,3 @@
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-/* eslint-disable react/destructuring-assignment */
-/* eslint-disable react/no-unescaped-entities */
 import React, { useState } from 'react';
 import * as classes from './mainSection.module.scss';
 import Button from '../UI/Button';
@@ -13,12 +9,12 @@ import logoOpera from '../../images/logo-opera.svg';
 // eslint-disable-next-line no-unused-vars
 import arrowImage from '../../images/icon-arrow.svg';
 
-const BrowserCard = (props) => {
+const BrowserCard = ({ margin, logo, title, text }) => {
   return (
-    <div className={classes.BrowserCard} style={{ marginTop: props.margin }}>
-      <img src={props.logo} alt='' className={classes.browserLogo} />
-      <h3>{props.title}</h3>
-      <p>{props.text}</p>
+    <div className={classes.BrowserCard} style={{ marginTop: margin }}>
+      <img src={logo} alt='' className={classes.browserLogo} />
+      <h3>{title}</h3>
+      <p>{text}</p>
       <img src={dotsImage} alt='' />
       <Button type='blue' className={classes.Button_fix}>
         {' '}
@@ -74,7 +70,7 @@ const DownloadSection = () => {
 
 /// ////////////////////////////////////////////////////////////////////////////////////////////////
 
-const QuestionTab = (props) => {
+const QuestionTab = ({ question, answerPassed }) => {
   const [pushed, setPushed] = useState(false);
 
   const buttonClickHandler = () => {
@@ -88,15 +84,21 @@ const QuestionTab = (props) => {
     answer = (
       <div className={classes.AnswerBox}>
         {' '}
-        <p>{props.answer}</p>
+        <p>{answerPassed}</p>
       </div>
     );
     imgStyle.push(classes.ImgActive);
   }
 
   return (
-    <div className={classes.QuestionTab} onClick={buttonClickHandler}>
-      <p>{props.question}</p>
+    <div
+      className={classes.QuestionTab}
+      onClick={buttonClickHandler}
+      onKeyDown={() => {}}
+      role='button'
+      tabIndex={0}
+    >
+      <p>{question}</p>
       {/* <img
         src={arrowImage}
         alt=''

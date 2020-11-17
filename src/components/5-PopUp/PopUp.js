@@ -1,4 +1,3 @@
-/* eslint-disable react/destructuring-assignment */
 import React from 'react';
 import { connect } from 'react-redux';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
@@ -7,7 +6,7 @@ import sourceImage2 from '../../images/illustration-features-tab-2.svg';
 import Button from '../UI/Button';
 import * as actionTypes from '../../store/actionTypes';
 
-const PopUp = (props) => {
+const PopUp = ({ onCloseButtonClick }) => {
   const PopUpInfo = {
     title: 'Intelligent search',
     text:
@@ -31,7 +30,7 @@ const PopUp = (props) => {
         <a
           href='#close'
           className={classes.CloseButton}
-          onClick={props.onCloseButtonClick}
+          onClick={onCloseButtonClick}
         >
           &times;
         </a>
